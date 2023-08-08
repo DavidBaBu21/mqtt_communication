@@ -19,7 +19,7 @@ const char* mqtt_server = "192.168.100.16";
 void setup(){
   Serial.begin(115200);
   setup_wifi();
-  client.setServer(mqtt_server, 1880);
+  client.setServer(mqtt_server, 1883);
 //  client.setCallback(callback);
 }
 
