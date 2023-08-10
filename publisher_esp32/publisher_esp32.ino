@@ -13,7 +13,7 @@ int value = 0;
 float temperatura = 0;
 
 const char* ssid = "Totalplay-2.4G-44a8";
-const char* password = "tntZbtg8pbKDqfqz";
+const char* password = "";
 const char* mqtt_server = "192.168.100.16";
 
 void setup(){
