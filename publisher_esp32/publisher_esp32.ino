@@ -1,4 +1,4 @@
-//This code publishes the information reicieved by the esp32 to red node
+ //This code publishes the information reicieved by the esp32 to red node
 //Commited
 #include <Wire.h>
 #include <PubSubClient.h>
@@ -19,7 +19,8 @@ const char* mqtt_server = "192.168.100.16";
 void setup(){
   Serial.begin(115200);
   setup_wifi();
-  client.setServer(mqtt_server, 1883);
+  delay(500);
+  client.setServer("192.168.100.16", 1883);
 //  client.setCallback(callback);
 }
 
@@ -42,13 +43,15 @@ void setup_wifi(){
 void reconnect(){
   while(!client.connected()){
     Serial.print("Trying MQTT conection...");
-    if(client.connect("ESP8266Cliet")){
+    if(client.connect("ESP32Cliet")){
       Serial.println("Connected");
     }else{
       Serial.print("Fallo, rc=");
       Serial.print(client.state());
       Serial.println("Intentelo de nuevo en 5s");
+      delay(5000);
     }
+    client.loop();
   }
 }
 
