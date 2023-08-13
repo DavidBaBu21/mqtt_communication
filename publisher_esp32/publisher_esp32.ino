@@ -20,8 +20,7 @@ void setup(){
   Serial.begin(115200);
   setup_wifi();
   delay(500);
-  client.setServer("192.168.100.16", 1883);
-//  client.setCallback(callback);
+  client.setServer(mqtt_server, 1883);
 }
 
 void setup_wifi(){
